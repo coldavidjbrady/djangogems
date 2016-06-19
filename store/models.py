@@ -39,15 +39,6 @@ class Review(models.Model):
             print(self.body + " Submitted by: " + self.author)
             print(" on " + str(self.createdOn))
         return buf.getvalue()
-        '''
-        reviewDict = {}
-        reviewDict["stars"] = self.stars
-        reviewDict["body"] = self.body
-        reviewDict["author"] = self.author
-        reviewDict["createdOn"] = repr(self.createdOn)
-        return json.dumps(reviewDict)
-        '''
-
 
 
 
