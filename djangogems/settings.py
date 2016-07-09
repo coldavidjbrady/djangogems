@@ -22,7 +22,14 @@ REST_FRAMEWORK = {
         'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
     ),
 }
+'''
+REST_FRAMEWORK = {
+    # other settings...
 
+    'DEFAULT_AUTHENTICATION_CLASSES': [],
+    'DEFAULT_PERMISSION_CLASSES': [],
+}
+'''
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -36,7 +43,7 @@ SECRET_KEY = '-dp$gj!kwe%7*4v)g2yula$czgitmo#*w65vp2j2$386e^rvx%'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost:63342']
+ALLOWED_HOSTS = []
 
 
 CORS_ORIGIN_WHITELIST = ('127.0.0.1', 'localhost:63342', '127.0.0.1:7177')
