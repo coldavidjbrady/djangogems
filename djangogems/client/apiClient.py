@@ -31,7 +31,7 @@ def getToken():
 
         LOGIN_URL = 'http://127.0.0.1:7177/api-token-auth/'
 
-        loginData = {'username' : '', 'password' : '' }
+        loginData = {'username' : 'dbrady', 'password' : 'WestPoint87' }
 
         r = requests.post(LOGIN_URL, data = loginData)
 
@@ -54,7 +54,7 @@ def getProducts(token):
     try:
         buf = StringIO()
 
-        PRODUCT_URL = "http://127.0.0.1:7177/api/products/"
+        PRODUCT_URL = "http://127.0.0.1:7177/api/products"
 
         headerData = {"Content-Type" : "application/json",
                       "Accept" : "application/json",
