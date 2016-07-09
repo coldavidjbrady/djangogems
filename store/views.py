@@ -3,19 +3,22 @@ from django.contrib.auth import get_user_model
 from rest_framework import viewsets, authentication, permissions, filters
 from .models import *
 from .serializers import *
-#from .forms import *
+from rest_framework_jwt.authentication import JSONWebTokenAuthentication
 
 # Create your views here.
+
 class DefaultMixin(object):
     authentication_classes = (
         #authentication.CSRFCheck
         authentication.BasicAuthentication,
-        authentication.TokenAuthentication,
+        authentication.SessionAuthentication,
+        #authentication.TokenAuthentication,
+        JSONWebTokenAuthentication
     )
     permission_classes = (
-        #permissions.IsAuthenticated,
+        permissions.IsAuthenticated,
         #permissions.IsAuthenticatedOrReadOnly,
-        permissions.AllowAny,
+        #permissions.AllowAny,
     )
     paginate_by = 25
     paginate_by_param = 'page_size'

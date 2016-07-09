@@ -129,6 +129,7 @@
       <column name="rarity" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
       <column name="color" sqlType="VARCHAR(50)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
       <column name="faces" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="description" sqlType="VARCHAR(100)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
       <primary-key columns="id"/>
     </table>
     <table name="store_review" schema="" catalog="" type="TABLE">
@@ -136,8 +137,8 @@
       <column name="stars" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
       <column name="body" sqlType="VARCHAR(250)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
       <column name="author" sqlType="VARCHAR(50)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
-      <column name="createdOn" sqlType="DATE" precision="0" scale="-1" nullable="false" jdbcType="12"/>
       <column name="product_id" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="createdOn" sqlType="DATE" precision="0" scale="-1" nullable="false" jdbcType="12"/>
       <primary-key columns="id"/>
       <foreign-key name="#FAKE_store_review_1" columns="product_id" ref-table="store_product" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
       <index name="store_review_9bea82de" unique="true" columns="product_id"/>

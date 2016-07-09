@@ -31,15 +31,6 @@ class ProductSerializer(serializers.ModelSerializer):
         slug_field='path'
      )
 
-    '''
-    # The following are useful for returning links versus string representations
-    reviews = serializers.HyperlinkedRelatedField(
-        many=True,
-        read_only=True,
-        view_name='review-detail'
-    )
-    '''
-
     class Meta:
       model = Product
       fields = ('id', 'name', 'description', 'shine', 'price', 'rarity', 'color',
@@ -53,7 +44,24 @@ class ProductSerializer(serializers.ModelSerializer):
         }
         return links
 
+    def update(self, instance, update_data):
+        # Update the product instance
+        instance.name = update_data['name']
+        instance.description = update_data['description']
+        instance.shine = update_data['shine']
+        instance.price = update_data['price']
+        instance.rarity = update_data['rarity']
+        instance.color = update_data['color']
+        instance.faces = update_data['faces']
+        instance.save()
+        return instance
 
+    def create(self, data):
+        # Create the product instance
+        newProduct = Product.objects.create(name=data["name"], description=data["description"], shine=data["shine"],
+                                            price=data["price"], rarity=data["rarity"], color=data["color"], faces=data["faces"])
+        newProduct.save()
+        return newProduct
 
 class ImageSerializer(serializers.ModelSerializer):
 
