@@ -81,4 +81,3 @@ if __name__ == '__main__':
     token = getToken()
     products = getProducts(token)
     #createUser(token, user)
-
