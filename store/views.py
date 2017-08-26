@@ -12,7 +12,7 @@ class DefaultMixin(object):
         #authentication.CSRFCheck
         authentication.BasicAuthentication,
         authentication.SessionAuthentication,
-        #authentication.TokenAuthentication,
+        authentication.TokenAuthentication,
         JSONWebTokenAuthentication
     )
     permission_classes = (

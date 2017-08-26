@@ -1,0 +1,12 @@
+{% load staticfiles %}
+
+{% if products %}
+    <ul>
+    {% for product in products %}
+        {{ product.name }}
+        <br>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No products are available.</p>
+{% endif %}

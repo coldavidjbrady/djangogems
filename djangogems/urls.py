@@ -16,12 +16,14 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 from store.urls import router
-from rest_framework_jwt.views import obtain_jwt_token
-
+from rest_framework_jwt.views import obtain_jwt_token, refresh_jwt_token
+from .views import IndexView
 
 urlpatterns = [
+    url(r'^$', IndexView.as_view(), name='index'),
     url(r'^admin/', admin.site.urls),
     url(r'^api/token/', admin.site.urls),
     url(r'^api/', include(router.urls)),
     url(r'^api-token-auth/', obtain_jwt_token),
+    url(r'api-token-refresh/', refresh_jwt_token),
 ]
