@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/1.9/ref/settings/
 """
 
 import os
-#from rest_framework_jwt.authentication import JSONWebTokenAuthentication
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': (
@@ -48,7 +47,7 @@ ALLOWED_HOSTS = []
 
 
 CORS_ORIGIN_WHITELIST = ('127.0.0.1', 'localhost:63342', '127.0.0.1:7177')
-#CORS_ORIGIN_ALLOW_ALL = True
+CORS_ORIGIN_ALLOW_ALL = True
 
 # Application definition
 
